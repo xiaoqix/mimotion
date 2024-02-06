@@ -219,7 +219,7 @@ def main(_user, _passwd, min_1, max_1,_ftkey):
     
     postdata = urllib.parse.urlencode({'title': '步数修改成功', 'desp': result}).encode('utf-8')
     url = f'https://sctapi.ftqq.com/{ftseverkey}.send'
-    req = urllib.request.Request(url, data=postdata, method='POST')
+    req = requests.post(url, data=postdata)
     
     return result
 
