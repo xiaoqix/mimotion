@@ -235,7 +235,7 @@ def main(_user, _passwd, min_1, max_1):
 
     
     url = f'https://wxpusher.zjiecode.com/api/send/message'
-    req = requests.post(url, data=postdata,heaters=head,allow_redirects=False).json()
+    req = requests.post(url, data=postdata,headers=head,allow_redirects=False).json()
     print(req)
     return result
 
