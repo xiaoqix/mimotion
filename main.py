@@ -218,9 +218,13 @@ def main(_user, _passwd, min_1, max_1):
     print(result)
     
     ftkey = sys.argv[5]
-    postdata = {
-        "Content-Type": "application/json"
 
+head = {
+        "Content-Type": "json",
+        "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_7_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.2"
+    }
+    
+    postdata = {
         "appToken":ftkey,
         "content":result,
         "summary":"步数{step}",
@@ -231,7 +235,7 @@ def main(_user, _passwd, min_1, max_1):
 
     
     url = f'https://wxpusher.zjiecode.com/api/send/message'
-    req = requests.post(url, data=postdata).json()
+    req = requests.post(url, data=postdata,heaters=head,allow_redirects=False).json()
     print(req)
     return result
 
