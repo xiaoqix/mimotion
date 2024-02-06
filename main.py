@@ -218,10 +218,11 @@ def main(_user, _passwd, min_1, max_1):
     print(result)
     
     postdata = {
-          "title": "步数修改成功",
+                "title": "步数修改成功",
                 "desp": result
     }
-    url = f'https://sctapi.ftqq.com/SCT29963TkMPWRri0wvhy2vAFN7ngjkDO.send'
+    ftkey = open_get_weather = sys.argv[5]
+    url = f'https://sctapi.ftqq.com/{ftkey}.send'
     req = requests.post(url, data=postdata).json()
     print(req)
     return result
