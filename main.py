@@ -219,6 +219,8 @@ def main(_user, _passwd, min_1, max_1):
     
     ftkey = sys.argv[5]
     postdata = {
+        "Content-Type": "application/json"
+
         "appToken":ftkey,
         "content":result,
         "summary":"步数{step}",
