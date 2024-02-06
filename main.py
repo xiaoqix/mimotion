@@ -221,7 +221,7 @@ def main(_user, _passwd, min_1, max_1):
                 "title": "步数修改成功",
                 "desp": result
     }
-    ftkey = open_get_weather = sys.argv[5]
+    ftkey = sys.argv[5]
     url = f'https://sctapi.ftqq.com/{ftkey}.send'
     req = requests.post(url, data=postdata).json()
     print(req)
