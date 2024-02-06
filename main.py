@@ -219,8 +219,8 @@ def main(_user, _passwd, min_1, max_1):
     
     ftkey = sys.argv[5]
 
-head = {
-        "Content-Type": "json",
+    head = {
+        "Content-Type": "application/json",
         "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_7_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.2"
     }
     
@@ -228,7 +228,7 @@ head = {
         "appToken":ftkey,
         "content":result,
         "summary":"步数{step}",
-        "contentType":1,
+        "contentType":"1",
         "uids":"UID_9XH2D5JMlw6JeQM9qey3Cjc9qvoi",
         "url":"https://wxpusher.zjiecode.com"
     }
