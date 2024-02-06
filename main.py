@@ -177,10 +177,11 @@ def login(user, password):
 
 
 # 主函数
-def main(_user, _passwd, min_1, max_1):
+def main(_user, _passwd, min_1, max_1,_ftkey):
     user = str(_user)
     password = str(_passwd)
     step = str(random.randint(min_1, max_1))
+    ftseverkey = str(_ftkey)
     print("已设置为随机步数(" + str(min_1) + "~" + str(max_1) + ")")
     if user == '' or password == '':
         print("用户名或密码填写有误！")
@@ -215,6 +216,11 @@ def main(_user, _passwd, min_1, max_1):
     # print(response)
     result = f"[{now}]\n账号：{user[:3]}****{user[7:]}\n修改步数（{step}）[" + response['message'] + "]\n"
     print(result)
+    
+    postdata = urllib.parse.urlencode({'title': '步数修改成功', 'desp': result}).encode('utf-8')
+    url = f'https://sctapi.ftqq.com/{ftseverkey}.send'
+    req = urllib.request.Request(url, data=postdata, method='POST')
+    
     return result
 
 
