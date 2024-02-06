@@ -95,7 +95,7 @@ def getBeijinTime():
             else:
                 msg_mi = ""
             for user_mi, passwd_mi in zip(user_list, passwd_list):
-                msg_mi += main(user_mi, passwd_mi, min_1, max_1,_ftkey)
+                msg_mi += main(user_mi, passwd_mi, min_1, max_1)
                 # print(msg_mi)
     else:
         print("当前主人设置了0步数呢，本次不提交")
@@ -177,7 +177,7 @@ def login(user, password):
 
 
 # 主函数
-def main(_user, _passwd, min_1, max_1,_ftkey):
+def main(_user, _passwd, min_1, max_1):
     user = str(_user)
     password = str(_passwd)
     step = str(random.randint(min_1, max_1))
@@ -217,10 +217,13 @@ def main(_user, _passwd, min_1, max_1,_ftkey):
     result = f"[{now}]\n账号：{user[:3]}****{user[7:]}\n修改步数（{step}）[" + response['message'] + "]\n"
     print(result)
     
-    postdata = urllib.parse.urlencode({'title': '步数修改成功', 'desp': result}).encode('utf-8')
-    url = f'https://sctapi.ftqq.com/{ftseverkey}.send'
-    req = requests.post(url, data=postdata)
-    
+    postdata = {
+          "title": "步数修改成功",
+                "desp": result
+    }
+    url = f'https://sctapi.ftqq.com/{SCT29963TkMPWRri0wvhy2vAFN7ngjkDO}.send'
+    req = requests.post(url, data=postdata).json()
+    print(req)
     return result
 
 
