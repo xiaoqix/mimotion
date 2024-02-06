@@ -217,13 +217,19 @@ def main(_user, _passwd, min_1, max_1):
     result = f"[{now}]\n账号：{user[:3]}****{user[7:]}\n修改步数（{step}）[" + response['message'] + "]\n"
     print(result)
     
-    postdata = {
-                "title": "步数修改成功",
-                "desp": result
-    }
     ftkey = sys.argv[5]
-    url = f'https://sctapi.ftqq.com/{ftkey}.send'
-    req = requests.post(url, data=postdata).json()
+    postdata = {
+        "appToken":ftkey,
+        "content":result,
+        "summary":"步数{step}",
+        "contentType":1,
+        "uids":"UID_9XH2D5JMlw6JeQM9qey3Cjc9qvoi",
+        "url":"https://wxpusher.zjiecode.com"
+    }
+
+    
+    url = f'https://wxpusher.zjiecode.com/api/send/message'
+    req = requests.post(url, body=postdata).json()
     print(req)
     return result
 
