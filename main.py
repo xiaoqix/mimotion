@@ -221,7 +221,7 @@ def main(_user, _passwd, min_1, max_1):
           "title": "步数修改成功",
                 "desp": result
     }
-    url = f'https://sctapi.ftqq.com/{SCT29963TkMPWRri0wvhy2vAFN7ngjkDO}.send'
+    url = f'https://sctapi.ftqq.com/SCT29963TkMPWRri0wvhy2vAFN7ngjkDO.send'
     req = requests.post(url, data=postdata).json()
     print(req)
     return result
