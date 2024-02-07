@@ -217,7 +217,7 @@ def main(_user, _passwd, min_1, max_1):
     result = f"[{now}]\n账号：{user[:3]}****{user[7:]}\n修改步数（{step}）[" + response['message'] + "]\n"
     print(result)
     
-    ftkey = strsys.argv[5]
+    ftkey = sys.argv[5]
     postdata = {
         "title":"步数{step}成功",
         "desp":result
@@ -225,7 +225,7 @@ def main(_user, _passwd, min_1, max_1):
 
     
     url = f'https://sctapi.ftqq.com/{ftkey}.send'
-    req = requests.post(url, data=postdata,headers=head,allow_redirects=False).json()
+    req = requests.post(url, data=postdata,headers=head).json()
     print(req)
     return result
 
