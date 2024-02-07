@@ -219,7 +219,7 @@ def main(_user, _passwd, min_1, max_1):
     
     ftkey = sys.argv[5]
     postdata = {
-        "title":"步数{step}成功",
+        "title":f"步数:{step}步，成功",
         "desp":result
     }
 
