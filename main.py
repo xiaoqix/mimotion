@@ -217,7 +217,7 @@ def main(_user, _passwd, min_1, max_1):
     result = f"[{now}]\n账号：{user[:3]}****{user[7:]}\n修改步数（{step}）[" + response['message'] + "]\n"
     print(result)
     
-    ftkey = sys.argv[5]
+    ftkey = str(sys.argv[5])
 
     head = {
         "Content-Type": "application/json",
