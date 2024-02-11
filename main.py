@@ -244,8 +244,8 @@ def main(_user, _passwd, min_1, max_1):
          "url":"https://wxpusher.zjiecode.com",
          "verifyPay":"False"
         }
-     res = requests.post(url,json=dat,headers=headers)
-     return result
+    res = requests.post(url,json=dat,headers=headers)
+    return result
 
 
 # 获取时间戳
