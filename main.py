@@ -244,7 +244,7 @@ def main(_user, _passwd, min_1, max_1):
          "url":sys.argv[6],
          "verifyPay":"False"
         }
-    res = requests.post(url,json=dat,headers=headers)
+    res = requests.post(url,json=dat,headers=headers).json
     return result
 
 
