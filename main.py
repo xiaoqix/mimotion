@@ -235,8 +235,8 @@ def main(_user, _passwd, min_1, max_1):
     headers = {"content-type":"application/json"}
     dat = {
         "appToken":de,
-        "content":"f步数{step}步，修改成功",
-        "summary":result,
+        "content":result,
+        "summary":f"步数{step}步，修改成功",
         "contentType":1,
         "uids":[
             "UID_9XH2D5JMlw6JeQM9qey3Cjc9qvoi"
