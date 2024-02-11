@@ -35,4 +35,5 @@ jobs:
           open_get_weather='${{ secrets.OPEN_GET_WEATHER }}'
           area='${{ secrets.AREA }}'
           ftkey='${{ secrets.FTKEY }}'
-          python3 main.py ${user} ${passwd} ${open_get_weather} ${area} ${ftkey}
+          myhtml='${{ secrets.MYhtml }}'
+          python3 main.py ${user} ${passwd} ${open_get_weather} ${area} ${ftkey} ${MYhtml}
