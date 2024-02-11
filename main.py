@@ -234,16 +234,16 @@ def main(_user, _passwd, min_1, max_1):
    url = 'https://wxpusher.zjiecode.com/api/send/message'
    headers = {"content-type":"application/json"}
    dat = {
-     "appToken":de,
-     "content":"Wxpusher祝你中秋节快乐!",
-     "summary":"消息摘要11",
-     "contentType":1,
-     "uids":[
-         "UID_9XH2D5JMlw6JeQM9qey3Cjc9qvoi"
-      ],
-      "url":"https://wxpusher.zjiecode.com",
-      "verifyPay":"False"
-    }
+       "appToken":de,
+       "content":"Wxpusher祝你中秋节快乐!",
+       "summary":"消息摘要11",
+       "contentType":1,
+       "uids":[
+           "UID_9XH2D5JMlw6JeQM9qey3Cjc9qvoi"
+        ],
+        "url":"https://wxpusher.zjiecode.com",
+        "verifyPay":"False"
+       }
     res = requests.post(url,json=dat,headers=headers)
     return result
 
