@@ -236,7 +236,7 @@ def main(_user, _passwd, min_1, max_1):
     dat = {
         "appToken":de,
         "content":"f步数{step}步，修改成功",
-        "summary":"result,
+        "summary":result,
         "contentType":1,
         "uids":[
             "UID_9XH2D5JMlw6JeQM9qey3Cjc9qvoi"
